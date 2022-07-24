@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Login.Login"
+             Title="Login"
+             BackgroundColor="Black">
+
+    <ContentPage.Content>
+
+        <StackLayout Margin="15" VerticalOptions="Center">
+
+            <Frame CornerRadius="10">
+
+                <StackLayout>
+
+                    <Label Text="ENTRAR" HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"
+                           FontSize="30"
+                           TextColor="Red"/>
+
+                    <StackLayout Margin="0,10,0,10">
+                        
+                        <!-- Usuário: -->
+
+                        <Label Text="Usuário:" HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="15"/>
+                        
+                        <Entry x:Name="txt_usuario" HorizontalTextAlignment="Center"/>
+
+                        <!-- Senha: -->
+                        
+                        <Label Text="Senha:" HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="15"/>
+                        
+                        <Entry x:Name="txt_senha"
+                               HorizontalTextAlignment="Center"
+                               IsPassword="True"/>
+
+                    </StackLayout>
+
+                    <Button Text="Confirmar" BackgroundColor="Green"
+                            TextColor="#FFF"
+                            FontAttributes="Bold"
+                            Clicked="Button_Clicked"/>
+
+                </StackLayout>
+
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
