@@ -11,7 +11,7 @@ namespace App_Login
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new Opcoes());
 
         }
 

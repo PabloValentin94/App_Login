@@ -21,17 +21,36 @@ namespace App_Login
 
         //ArrayList senhas = new ArrayList();
 
+        string usuario = "Pablo";
+
+        string senha = "211066";
+
         public Login()
         {
 
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
 
+            if(txt_usuario.Text == usuario && txt_senha.Text == senha)
+            {
 
+                await Navigation.PushAsync(new App_Login.Area_Restrita.Area_Restrita());
+
+            }
+
+            else
+            {
+
+                await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente" +
+                    " ou verifique se seu cadastro realmente existe.", "OK");
+
+            }
 
         }
 
