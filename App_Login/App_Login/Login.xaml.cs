@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using App_Login;
+
 using System.Collections; // Biblioteca que possui o ArrayList
 
 namespace App_Login
@@ -44,17 +46,19 @@ namespace App_Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if (txt_usuario_login.Text == usuario && txt_senha_login.Text == senha)
+            if (usuario.Equals(txt_usuario_login.Text) && senha.Equals(txt_senha_login.Text))
             {
 
-                await Navigation.PushAsync(new App_Login.Area_Restrita.Area_Restrita());
+                App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
+
+                App.Current.MainPage = new Area_Restrita.Area_Restrita();
 
             }
 
             else
             {
 
-                if (usuario == "0" && senha == "0")
+                if (usuario.Equals("0") && senha.Equals("0"))
                 {
 
                     await DisplayAlert("Erro", "Apararentemente este cadastro não existe. Tente" +

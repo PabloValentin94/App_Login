@@ -11,7 +11,21 @@ namespace App_Login
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Opcoes());
+            if(Properties.ContainsKey("PersistenciaUsuarioLogado"))
+            {
+
+                string usuario = Properties.ContainsKey("PersistenciaUsuarioLogado").ToString();
+
+                MainPage = new Area_Restrita.Area_Restrita();
+
+            }
+
+            else
+            {
+
+                MainPage = new NavigationPage(new Opcoes());
+
+            }
 
         }
 
