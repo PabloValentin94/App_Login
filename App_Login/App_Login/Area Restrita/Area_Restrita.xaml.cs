@@ -19,7 +19,8 @@ namespace App_Login.Area_Restrita
 
             InitializeComponent();
 
-            NavigationPage.SetHasNavigationBar(this, false);
+            img_restricted_area.Source = ImageSource.FromResource("App_Login.Images." +
+            "image_restricted_area.png");
 
         }
 

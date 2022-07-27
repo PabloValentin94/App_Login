@@ -11,11 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Imagem\Image.png" />
+    <None Remove="Images\image_restricted_area.png" />
+    <None Remove="Images\Image_user.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Imagem\Image.png">
+    <EmbeddedResource Include="Images\image_restricted_area.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\image_user.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

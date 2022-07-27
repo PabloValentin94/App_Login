@@ -22,7 +22,7 @@ namespace App_Login
 
             NavigationPage.SetHasNavigationBar(this, false);
 
-            img_user.Source = ImageSource.FromResource("App_Login.Imagem.Image.png");
+            img_user.Source = ImageSource.FromResource("App_Login.Images.image_user.png");
 
         }
 
@@ -36,7 +36,11 @@ namespace App_Login
         private async void btn_login_Clicked(object sender, EventArgs e)
         {
 
+            /* Os argumentos fornecidos à Classe Login são puramente
+             * aleatórios. Sua única função é atender a condição da estrutura de decisão
+             * do Método Button_Clicked (Login) */
 
+            await Navigation.PushAsync(new Login("0", "0"));
 
         }
     }

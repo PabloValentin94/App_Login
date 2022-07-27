@@ -21,9 +21,12 @@ namespace App_Login
 
         //ArrayList senhas = new ArrayList();
 
-        string usuario = null;
+        string usuario = "0";
 
-        string senha = null;
+        string senha = "0";
+
+        /* Os valores atribuídos, as duas variáveis acima, servem somente para
+         * atender a condição da estrutura de decisão do Método Button_Clicked */
 
         public Login(string texto_usuario, string texto_senha)
         {
@@ -41,7 +44,7 @@ namespace App_Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if(txt_usuario_login.Text == usuario && txt_senha_login.Text == senha)
+            if (txt_usuario_login.Text == usuario && txt_senha_login.Text == senha)
             {
 
                 await Navigation.PushAsync(new App_Login.Area_Restrita.Area_Restrita());
@@ -51,8 +54,20 @@ namespace App_Login
             else
             {
 
-                await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente" +
-                    " ou verifique se seu cadastro realmente existe.", "OK");
+                if (usuario == "0" && senha == "0")
+                {
+
+                    await DisplayAlert("Erro", "Apararentemente este cadastro não existe. Tente" +
+                        " se cadastrar antes de prosseguir.", "OK");
+
+                }
+
+                else
+                {
+
+                    await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente.", "OK");
+
+                }
 
             }
 
