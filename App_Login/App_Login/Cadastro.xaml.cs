@@ -40,7 +40,7 @@ namespace App_Login
 
                 await DisplayAlert("Concluído!", "Usuário cadastrado.", "OK");
 
-                await Navigation.PopAsync();
+                await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
 
             }
 

@@ -36,7 +36,7 @@ namespace App_Login
         private async void btn_login_Clicked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new Login());
+
 
         }
     }

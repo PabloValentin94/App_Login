@@ -21,16 +21,20 @@ namespace App_Login
 
         //ArrayList senhas = new ArrayList();
 
-        string usuario = "10";
+        string usuario = null;
 
-        string senha = "10";
+        string senha = null;
 
-        public Login()
+        public Login(string texto_usuario, string texto_senha)
         {
 
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
+
+            usuario = texto_usuario;
+
+            senha = texto_senha;
 
         }
 
