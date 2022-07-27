@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using App_Login;
+
 namespace App_Login
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -27,14 +29,14 @@ namespace App_Login
         private async void btn_cadastro_Clicked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new App_Login.Cadastro());
+            await Navigation.PushAsync(new Cadastro());
 
         }
 
         private async void btn_login_Clicked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new App_Login.Login());
+            await Navigation.PushAsync(new Login());
 
         }
     }

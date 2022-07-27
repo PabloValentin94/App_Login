@@ -9,12 +9,20 @@ using Xamarin.Forms.Xaml;
 
 namespace App_Login.Area_Restrita
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class Area_Restrita : ContentPage
     {
         public Area_Restrita()
         {
+
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
+
     }
+
 }

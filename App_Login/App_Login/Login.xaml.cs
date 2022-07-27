@@ -21,9 +21,9 @@ namespace App_Login
 
         //ArrayList senhas = new ArrayList();
 
-        string usuario = "Pablo";
+        string usuario = "10";
 
-        string senha = "211066";
+        string senha = "10";
 
         public Login()
         {
@@ -37,7 +37,7 @@ namespace App_Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if(txt_usuario.Text == usuario && txt_senha.Text == senha)
+            if(txt_usuario_login.Text == usuario && txt_senha_login.Text == senha)
             {
 
                 await Navigation.PushAsync(new App_Login.Area_Restrita.Area_Restrita());
