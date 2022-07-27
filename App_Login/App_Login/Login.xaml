@@ -24,22 +24,28 @@
 
                         <Label Text="Usuário:" HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
-                               FontSize="15"/>
+                               FontSize="15"
+                               TextColor="Black"/>
                         
                         <Entry x:Name="txt_usuario_login"
                                Placeholder="Insira seu nome de usuário"
-                               HorizontalTextAlignment="Center"/>
+                               PlaceholderColor="Gray"
+                               HorizontalTextAlignment="Center"
+                               TextColor="Black"/>
 
                         <!-- Senha: -->
                         
                         <Label Text="Senha:" HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
-                               FontSize="15"/>
+                               FontSize="15"
+                               TextColor="Black"/>
                         
                         <Entry x:Name="txt_senha_login"
                                Placeholder="Insira sua senha"
+                               PlaceholderColor="Gray"
                                HorizontalTextAlignment="Center"
-                               IsPassword="True"/>
+                               IsPassword="True"
+                               TextColor="Black"/>
 
                     </StackLayout>
 

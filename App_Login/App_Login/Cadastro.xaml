@@ -24,21 +24,29 @@
 
                         <Label Text="Usuário:" HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
-                               FontSize="15"/>
+                               FontSize="15"
+                               TextColor="Black"/>
 
                         <Entry x:Name="txt_usuario_cadastro"
                                Placeholder="Crie um nome de usuário"
-                               HorizontalTextAlignment="Center"/>
+                               PlaceholderColor="Gray"
+                               HorizontalTextAlignment="Center"
+                               MaxLength="75"
+                               TextColor="Black"/>
 
                         <!-- Senha: -->
 
                         <Label Text="Senha:" HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
-                               FontSize="15"/>
+                               FontSize="15"
+                               TextColor="Black"/>
 
                         <Entry x:Name="txt_senha_cadastro"
                                Placeholder="Crie uma senha"
+                               PlaceholderColor="Gray"
                                HorizontalTextAlignment="Center"
+                               MaxLength="30"
+                               TextColor="Black"
                                IsPassword="True"/>
 
                     </StackLayout>
