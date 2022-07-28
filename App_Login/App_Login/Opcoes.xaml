@@ -7,12 +7,12 @@
     
     <ContentPage.Content>
         
-        <StackLayout VerticalOptions="Center" Margin="20">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="20">
           
             <Image x:Name="img_user" Aspect="AspectFill"
                    HeightRequest="350" MinimumHeightRequest="220"/>
 
-            <Grid HorizontalOptions="Center">
+            <Grid>
 
                 <Grid.ColumnDefinitions>
 
@@ -29,7 +29,7 @@
 
                 <StackLayout HorizontalOptions="Center" Padding="0,15" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
 
-                    <Grid HorizontalOptions="Center">
+                    <Grid>
 
                         <Grid.ColumnDefinitions>
 
