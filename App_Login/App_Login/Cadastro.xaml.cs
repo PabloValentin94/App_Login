@@ -11,7 +11,9 @@ using App_Login;
 
 namespace App_Login
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class Cadastro : ContentPage
     {
 
@@ -27,20 +29,32 @@ namespace App_Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if (txt_usuario_cadastro.Text == null || txt_senha_cadastro.Text == null
-                || txt_usuario_cadastro.Text == "" || txt_senha_cadastro.Text == "")
+            try
             {
 
-                await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
+                if (txt_usuario_cadastro.Text == null || txt_senha_cadastro.Text == null
+                || txt_usuario_cadastro.Text == "" || txt_senha_cadastro.Text == "")
+                {
+
+                    await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
+
+                }
+
+                else
+                {
+
+                    await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
+
+                    await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
+
+                }
 
             }
 
-            else
+            catch (Exception ex)
             {
 
-                await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
-
-                await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
+                await DisplayAlert("Erro!", ex.Message, "OK");
 
             }
 

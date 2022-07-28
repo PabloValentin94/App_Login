@@ -46,32 +46,44 @@ namespace App_Login
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if (usuario.Equals(txt_usuario_login.Text) && senha.Equals(txt_senha_login.Text))
+            try
             {
 
-                App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
-
-                App.Current.MainPage = new Area_Restrita.Area_Restrita();
-
-            }
-
-            else
-            {
-
-                if (usuario.Equals("0") && senha.Equals("0"))
+                if (usuario.Equals(txt_usuario_login.Text) && senha.Equals(txt_senha_login.Text))
                 {
 
-                    await DisplayAlert("Atenção!", "Nenhum cadastro existente. Tente" +
-                        " se cadastrar antes de prosseguir.", "OK");
+                    App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
+
+                    App.Current.MainPage = new Area_Restrita.Area_Restrita();
 
                 }
 
                 else
                 {
 
-                    await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente.", "OK");
+                    if (usuario.Equals("0") && senha.Equals("0"))
+                    {
+
+                        await DisplayAlert("Atenção!", "Nenhum cadastro existente. Tente" +
+                            " se cadastrar antes de prosseguir.", "OK");
+
+                    }
+
+                    else
+                    {
+
+                        await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente.", "OK");
+
+                    }
 
                 }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                await DisplayAlert("Erro!", ex.Message, "OK");
 
             }
 

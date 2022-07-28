@@ -31,17 +31,30 @@ namespace App_Login.Area_Restrita
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
-            if(await DisplayAlert("Aviso!", "Realmente deseja sair da área restrita?",
-               "Sim", "Não"))
+            try
             {
 
-                App.Current.Properties.Remove("PersistenciaUsuarioLogado");
+                if (await DisplayAlert("Aviso!", "Realmente deseja sair da área restrita?",
+               "Sim", "Não"))
+                {
 
-                App.Current.MainPage = new NavigationPage(new Opcoes());
+                    App.Current.Properties.Remove("PersistenciaUsuarioLogado");
+
+                    App.Current.MainPage = new NavigationPage(new Opcoes());
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                await DisplayAlert("Erro!", ex.Message, "OK");
 
             }
 
         }
+
     }
 
 }

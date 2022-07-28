@@ -11,7 +11,9 @@ using App_Login;
 
 namespace App_Login
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class Opcoes : ContentPage
     {
 
@@ -29,7 +31,19 @@ namespace App_Login
         private async void btn_cadastro_Clicked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new Cadastro());
+            try
+            {
+
+                await Navigation.PushAsync(new Cadastro());
+
+            }
+
+            catch(Exception ex)
+            {
+
+                await DisplayAlert("Erro!", ex.Message, "OK");
+
+            }
 
         }
 
@@ -40,15 +54,35 @@ namespace App_Login
              * aleatórios. Sua única função é atender a condição da estrutura de decisão
              * do Método Button_Clicked (Login) */
 
-            if(await DisplayAlert("Aviso!", "É preciso ter um cadastro antes de fazer" +
-                " o login. Voce já está cadastrado?", "Sim", "Não"))
+            try
             {
 
-                await Navigation.PushAsync(new Login("0", "0"));
+                if (await DisplayAlert("Aviso!", "É preciso ter um cadastro antes de fazer" +
+                " o login. Voce já está cadastrado?", "Sim", "Não"))
+                {
+
+                    await Navigation.PushAsync(new Login("0", "0"));
+
+                }
+
+                else
+                {
+
+                    await Navigation.PushAsync(new Cadastro());
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                await DisplayAlert("Erro!", ex.Message, "OK");
 
             }
 
         }
+
     }
 
 }
