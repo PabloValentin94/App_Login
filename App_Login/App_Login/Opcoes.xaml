@@ -8,25 +8,24 @@
     <ContentPage.Content>
         
         <StackLayout VerticalOptions="Center" Margin="20">
+          
+            <Image x:Name="img_user" Aspect="AspectFill"
+                   HeightRequest="350" MinimumHeightRequest="220"/>
 
             <Grid HorizontalOptions="Center">
 
                 <Grid.ColumnDefinitions>
 
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
 
-                    <RowDefinition Height="220"/>
                     <RowDefinition Height="*"/>
 
                 </Grid.RowDefinitions>
-
-                <Image x:Name="img_user" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
-                       Aspect="AspectFill"/>
 
                 <StackLayout HorizontalOptions="Center" Padding="0,15" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
 
