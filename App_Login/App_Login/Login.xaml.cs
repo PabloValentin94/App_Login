@@ -61,7 +61,7 @@ namespace App_Login
                 if (usuario.Equals("0") && senha.Equals("0"))
                 {
 
-                    await DisplayAlert("Erro", "Apararentemente este cadastro não existe. Tente" +
+                    await DisplayAlert("Atenção!", "Nenhum cadastro existente. Tente" +
                         " se cadastrar antes de prosseguir.", "OK");
 
                 }

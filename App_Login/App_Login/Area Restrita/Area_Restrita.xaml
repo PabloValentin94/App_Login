@@ -4,17 +4,27 @@
              x:Class="App_Login.Area_Restrita.Area_Restrita"
              Title="Área Restrita"
              BackgroundColor="Black">
-    
+
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
 
             <Image x:Name="img_restricted_area" Aspect="AspectFill"
                    WidthRequest="300" HeightRequest="200"
-                   MinimumWidthRequest="150" MinimumHeightRequest="100"/>
+                   MinimumWidthRequest="150" MinimumHeightRequest="100"
+                   VerticalOptions="Center" HorizontalOptions="Center"
+                   Margin="0,0,0,5"/>
+
+            <Label Text="Área Restrita" TextColor="Yellow"
+                   HorizontalTextAlignment="Center" Margin="0,0,0,80"
+                   FontSize="Large" FontAttributes="Bold"/>
+
+            <Button Text="Sair" Clicked="Button_Clicked" BackgroundColor="Purple"
+                    TextColor="White" FontAttributes="Bold"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
 
         </StackLayout>
-        
+
     </ContentPage.Content>
     
 </ContentPage>

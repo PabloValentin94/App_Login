@@ -16,7 +16,7 @@ namespace App_Login
 
                 string usuario = Properties.ContainsKey("PersistenciaUsuarioLogado").ToString();
 
-                MainPage = new Area_Restrita.Area_Restrita();
+                MainPage = new NavigationPage(new Area_Restrita.Area_Restrita());
 
             }
 

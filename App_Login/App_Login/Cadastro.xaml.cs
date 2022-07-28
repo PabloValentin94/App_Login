@@ -38,7 +38,7 @@ namespace App_Login
             else
             {
 
-                await DisplayAlert("Concluído!", "Usuário cadastrado.", "OK");
+                await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
 
                 await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
 
