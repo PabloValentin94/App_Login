@@ -46,7 +46,7 @@ namespace App_Login
 
                     App.senhas.Add(txt_senha_cadastro.Text);
 
-                    await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
+                    await DisplayAlert("Concluído!", "Novo usuário cadastrado com sucesso.", "OK");
 
                     await Navigation.PopAsync();
 
@@ -71,8 +71,8 @@ namespace App_Login
             if(App.usuarios.Count > 0)
             {
 
-                if (await DisplayAlert("Aviso!", "Existem " + qnt_cadastros.ToString() +
-                                   " cadastros no sistema. Realmente deseja apagá-los?", "Sim", "Não"))
+                if (await DisplayAlert("Aviso!", "Existe(em) " + qnt_cadastros.ToString() +
+                                   " cadastro(os) no sistema. Realmente deseja apagá-lo(os)?", "Sim", "Não"))
                 {
 
                     App.usuarios.Clear();
@@ -80,7 +80,7 @@ namespace App_Login
                     App.senhas.Clear();
 
                     await DisplayAlert("Atenção!", qnt_cadastros.ToString() +
-                                       " cadastros apagados.", "OK");
+                                       " cadastro(os) apagado(os).", "OK");
 
                 }
 
@@ -89,8 +89,7 @@ namespace App_Login
             else
             {
 
-                await DisplayAlert("Aviso!", "O sistema ainda não possui nenhum cadastro.",
-                                   "OK");
+                await DisplayAlert("Aviso!", "O sistema ainda não possui nenhum cadastro.", "OK");
 
             }
 

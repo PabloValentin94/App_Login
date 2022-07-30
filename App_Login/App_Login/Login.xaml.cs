@@ -9,8 +9,6 @@ using Xamarin.Forms.Xaml;
 
 using App_Login;
 
-using System.Collections; // Biblioteca que possui o ArrayList
-
 namespace App_Login
 {
 
@@ -18,8 +16,6 @@ namespace App_Login
 
     public partial class Login : ContentPage
     {
-
-        int i;
 
         public Login()
         {
@@ -46,14 +42,11 @@ namespace App_Login
                 else
                 {
 
-                    for (i = 0; i > App.usuarios.Count; i++)
+                    if(App.usuarios.Contains(txt_usuario_login.Text))
                     {
 
-                        if (App.usuarios[i].ToString().Equals(txt_usuario_login.Text)
-                            && App.senhas[i].ToString().Equals(txt_senha_login.Text))
+                        if (App.senhas.Contains(txt_senha_login.Text))
                         {
-
-                            i = 0;
 
                             App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
 
@@ -64,10 +57,20 @@ namespace App_Login
                         else
                         {
 
-                            await DisplayAlert("Atenção!", "Usuário ou Senha incorretos! Tente Novamente.\n" +
-                                               "\nSe o erro persistir, verifique se realmente está cadastrado.", "OK");
+                            await DisplayAlert("Atenção!", "Nenhum cadastro encontrado no sistema." +
+                                                    " Verifique se seu Usuário e sua Senha estão corretos e tente novamente.\n" +
+                                                    "\nSe o erro persistir, verifique se você realmente está cadastrado.", "OK");
 
                         }
+
+                    }
+
+                    else
+                    {
+
+                        await DisplayAlert("Atenção!", "Nenhum cadastro encontrado no sistema." +
+                                                " Verifique se seu Usuário e sua Senha estão corretos e tente novamente.\n" +
+                                                "\nSe o erro persistir, verifique se você realmente está cadastrado.", "OK");
 
                     }
 

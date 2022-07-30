@@ -35,7 +35,7 @@ namespace App_Login.Area_Restrita
             {
 
                 if (await DisplayAlert("Aviso!", "Realmente deseja sair da Área Restrita?",
-               "Sim", "Não"))
+                                       "Sim", "Não"))
                 {
 
                     App.Current.Properties.Remove("PersistenciaUsuarioLogado");

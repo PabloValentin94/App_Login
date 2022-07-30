@@ -9,7 +9,7 @@
 
         <StackLayout Margin="15" VerticalOptions="Center">
 
-            <Frame CornerRadius="10">
+            <Frame CornerRadius="10" VerticalOptions="Center">
 
                 <StackLayout>
 
@@ -65,7 +65,8 @@
                     FontAttributes="Bold"
                     Clicked="btn_apagar_cadastros"
                     Margin="0,20"
-                    CornerRadius="5"/>
+                    CornerRadius="5"
+                    VerticalOptions="End"/>
 
         </StackLayout>
 

@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="15">
 
             <Image x:Name="img_restricted_area" Aspect="AspectFill"
                    WidthRequest="300" HeightRequest="200"

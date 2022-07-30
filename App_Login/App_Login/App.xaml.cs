@@ -18,10 +18,6 @@ namespace App_Login
 
             InitializeComponent();
 
-            App.usuarios.Add("Pablo");
-
-            App.senhas.Add("211066");
-
             if (Properties.ContainsKey("PersistenciaUsuarioLogado"))
             {
 
