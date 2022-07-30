@@ -28,6 +28,7 @@
                                TextColor="Black"/>
                         
                         <Entry x:Name="txt_usuario_login"
+                               Text="Pablo"
                                Placeholder="Insira seu nome de usuário"
                                PlaceholderColor="Gray"
                                HorizontalTextAlignment="Center"
@@ -41,6 +42,7 @@
                                TextColor="Black"/>
                         
                         <Entry x:Name="txt_senha_login"
+                               Text="211066"
                                Placeholder="Insira sua senha"
                                PlaceholderColor="Gray"
                                HorizontalTextAlignment="Center"

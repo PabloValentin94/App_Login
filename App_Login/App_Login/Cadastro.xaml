@@ -54,11 +54,18 @@
                     <Button Text="Confirmar" BackgroundColor="Green"
                             TextColor="#FFF"
                             FontAttributes="Bold"
-                            Clicked="Button_Clicked"/>
+                            Clicked="btn_confirmar"/>
 
                 </StackLayout>
 
             </Frame>
+
+            <Button Text="Apagar todos os cadastros existentes" BackgroundColor="Yellow"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="btn_apagar_cadastros"
+                    Margin="0,20"
+                    CornerRadius="5"/>
 
         </StackLayout>
 

@@ -26,14 +26,13 @@ namespace App_Login
 
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void btn_confirmar(object sender, EventArgs e)
         {
 
             try
             {
 
-                if (txt_usuario_cadastro.Text == null || txt_senha_cadastro.Text == null
-                || txt_usuario_cadastro.Text == "" || txt_senha_cadastro.Text == "")
+                if (String.IsNullOrEmpty(txt_usuario_cadastro.Text) || String.IsNullOrEmpty(txt_senha_cadastro.Text))
                 {
 
                     await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
@@ -43,9 +42,13 @@ namespace App_Login
                 else
                 {
 
+                    App.usuarios.Add(txt_usuario_cadastro.Text);
+
+                    App.senhas.Add(txt_senha_cadastro.Text);
+
                     await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
 
-                    await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
+                    await Navigation.PopAsync();
 
                 }
 
@@ -55,6 +58,39 @@ namespace App_Login
             {
 
                 await DisplayAlert("Erro!", ex.Message, "OK");
+
+            }
+
+        }
+
+        private async void btn_apagar_cadastros(object sender, EventArgs e)
+        {
+
+            int qnt_cadastros = App.usuarios.Count;
+
+            if(App.usuarios.Count > 0)
+            {
+
+                if (await DisplayAlert("Aviso!", "Existem " + qnt_cadastros.ToString() +
+                                   " cadastros no sistema. Realmente deseja apagá-los?", "Sim", "Não"))
+                {
+
+                    App.usuarios.Clear();
+
+                    App.senhas.Clear();
+
+                    await DisplayAlert("Atenção!", qnt_cadastros.ToString() +
+                                       " cadastros apagados.", "OK");
+
+                }
+
+            }
+
+            else
+            {
+
+                await DisplayAlert("Aviso!", "O sistema ainda não possui nenhum cadastro.",
+                                   "OK");
 
             }
 

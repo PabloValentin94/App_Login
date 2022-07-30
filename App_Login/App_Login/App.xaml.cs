@@ -2,16 +2,27 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using System.Collections;
+
 namespace App_Login
 {
     public partial class App : Application
     {
+
+        public static ArrayList usuarios = new ArrayList();
+
+        public static ArrayList senhas = new ArrayList();
+
         public App()
         {
 
             InitializeComponent();
 
-            if(Properties.ContainsKey("PersistenciaUsuarioLogado"))
+            App.usuarios.Add("Pablo");
+
+            App.senhas.Add("211066");
+
+            if (Properties.ContainsKey("PersistenciaUsuarioLogado"))
             {
 
                 string usuario = Properties.ContainsKey("PersistenciaUsuarioLogado").ToString();

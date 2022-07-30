@@ -58,10 +58,23 @@ namespace App_Login
             {
 
                 if (await DisplayAlert("Aviso!", "É preciso ter um cadastro antes de fazer" +
-                " o login. Voce já está cadastrado?", "Sim", "Não"))
+                " o login. Você já está cadastrado?", "Sim", "Não"))
                 {
 
-                    await Navigation.PushAsync(new Login("0", "0"));
+                    if(App.usuarios.Count > 0)
+                    {
+
+                        await Navigation.PushAsync(new Login());
+
+                    }
+
+                    else
+                    {
+
+                        await DisplayAlert("Atenção!", "Nenhum cadastro foi encontrado! " +
+                                           "Cadastra-se antes de prosseguir.", "OK");
+
+                    }
 
                 }
 

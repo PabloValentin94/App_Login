@@ -34,7 +34,7 @@ namespace App_Login.Area_Restrita
             try
             {
 
-                if (await DisplayAlert("Aviso!", "Realmente deseja sair da área restrita?",
+                if (await DisplayAlert("Aviso!", "Realmente deseja sair da Área Restrita?",
                "Sim", "Não"))
                 {
 

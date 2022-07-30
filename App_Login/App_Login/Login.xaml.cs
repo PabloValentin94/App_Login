@@ -19,27 +19,14 @@ namespace App_Login
     public partial class Login : ContentPage
     {
 
-        //ArrayList usuarios = new ArrayList();
+        int i;
 
-        //ArrayList senhas = new ArrayList();
-
-        string usuario = "0";
-
-        string senha = "0";
-
-        /* Os valores atribuídos, as duas variáveis acima, servem somente para
-         * atender a condição da estrutura de decisão do Método Button_Clicked */
-
-        public Login(string texto_usuario, string texto_senha)
+        public Login()
         {
 
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
-
-            usuario = texto_usuario;
-
-            senha = texto_senha;
 
         }
 
@@ -49,30 +36,38 @@ namespace App_Login
             try
             {
 
-                if (usuario.Equals(txt_usuario_login.Text) && senha.Equals(txt_senha_login.Text))
+                if (String.IsNullOrEmpty(txt_usuario_login.Text) || String.IsNullOrEmpty(txt_senha_login.Text))
                 {
 
-                    App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
-
-                    App.Current.MainPage = new Area_Restrita.Area_Restrita();
+                    await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir", "OK");
 
                 }
 
                 else
                 {
 
-                    if (usuario.Equals("0") && senha.Equals("0"))
+                    for (i = 0; i > App.usuarios.Count; i++)
                     {
 
-                        await DisplayAlert("Atenção!", "Nenhum cadastro existente. Tente" +
-                            " se cadastrar antes de prosseguir.", "OK");
+                        if (App.usuarios[i].ToString().Equals(txt_usuario_login.Text)
+                            && App.senhas[i].ToString().Equals(txt_senha_login.Text))
+                        {
 
-                    }
+                            i = 0;
 
-                    else
-                    {
+                            App.Current.Properties.Add("PersistenciaUsuarioLogado", txt_usuario_login.Text);
 
-                        await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente.", "OK");
+                            App.Current.MainPage = new Area_Restrita.Area_Restrita();
+
+                        }
+
+                        else
+                        {
+
+                            await DisplayAlert("Atenção!", "Usuário ou Senha incorretos! Tente Novamente.\n" +
+                                               "\nSe o erro persistir, verifique se realmente está cadastrado.", "OK");
+
+                        }
 
                     }
 
