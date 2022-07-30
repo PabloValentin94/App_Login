@@ -72,16 +72,9 @@ namespace App_Login
                     {
 
                         await DisplayAlert("Atenção!", "Nenhum cadastro foi encontrado! " +
-                                           "Cadastra-se antes de prosseguir.", "OK");
+                                           "Cadastre-se antes de prosseguir.", "OK");
 
                     }
-
-                }
-
-                else
-                {
-
-                    await Navigation.PushAsync(new Cadastro());
 
                 }
 
