@@ -4,8 +4,10 @@ using Xamarin.Forms.Xaml;
 
 namespace App_Login
 {
+
     public partial class App : Application
     {
+
         public App()
         {
 

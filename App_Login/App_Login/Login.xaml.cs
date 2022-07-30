@@ -19,13 +19,9 @@ namespace App_Login
     public partial class Login : ContentPage
     {
 
-        //ArrayList usuarios = new ArrayList();
+        string usuario = null;
 
-        //ArrayList senhas = new ArrayList();
-
-        string usuario = "0";
-
-        string senha = "0";
+        string senha = null;
 
         /* Os valores atribuídos, as duas variáveis acima, servem somente para
          * atender a condição da estrutura de decisão do Método Button_Clicked */
@@ -58,23 +54,19 @@ namespace App_Login
 
                 }
 
+                else if (String.IsNullOrEmpty(txt_usuario_login.Text)
+                         || String.IsNullOrEmpty(txt_senha_login.Text))
+                {
+
+                    await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
+
+                }
+
                 else
                 {
 
-                    if (usuario.Equals("0") && senha.Equals("0"))
-                    {
-
-                        await DisplayAlert("Atenção!", "Nenhum cadastro existente. Tente" +
-                            " se cadastrar antes de prosseguir.", "OK");
-
-                    }
-
-                    else
-                    {
-
-                        await DisplayAlert("Atenção!", "Usuário ou Senha incorretos. Tente Novamente.", "OK");
-
-                    }
+                    await DisplayAlert("Atenção!", "Usuário ou Senha incorretos! Tente Novamente.\n" +
+                                            "\nSe o erro persistir, verifique se você realmente está cadastrado.", "OK");
 
                 }
 

@@ -32,8 +32,8 @@ namespace App_Login
             try
             {
 
-                if (txt_usuario_cadastro.Text == null || txt_senha_cadastro.Text == null
-                || txt_usuario_cadastro.Text == "" || txt_senha_cadastro.Text == "")
+                if (String.IsNullOrEmpty(txt_usuario_cadastro.Text)
+                    || String.IsNullOrEmpty(txt_senha_cadastro.Text))
                 {
 
                     await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
