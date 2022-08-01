@@ -35,17 +35,41 @@
 
                         <!-- Senha: -->
 
-                        <Label Text="Senha:" HorizontalTextAlignment="Center"
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="30"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Senha:" HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
                                FontSize="15"
-                               TextColor="Black"/>
+                               TextColor="Black"
+                               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
 
-                        <Entry x:Name="txt_senha_login"
+                            <Entry x:Name="txt_senha_login"
                                Placeholder="Insira sua senha"
                                PlaceholderColor="Gray"
                                HorizontalTextAlignment="Center"
                                IsPassword="True"
-                               TextColor="Black"/>
+                               TextColor="Black"
+                               Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                            <ImageButton x:Name="btn_mostrar_ocultar_senha" BackgroundColor="Transparent"
+                                         Clicked="btn_mostrar_ocultar_senha_Clicked"
+                                         Grid.Column="1" Grid.Row="1"/>
+
+                        </Grid>
 
                     </StackLayout>
 

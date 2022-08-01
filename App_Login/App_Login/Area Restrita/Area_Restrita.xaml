@@ -13,7 +13,7 @@
                    WidthRequest="300" HeightRequest="200"
                    MinimumWidthRequest="150" MinimumHeightRequest="100"
                    VerticalOptions="Center" HorizontalOptions="Center"
-                   Margin="0,0,0,5"/>
+                   Margin="0,0,0,5" BackgroundColor="Transparent"/>
 
             <Label Text="Área Restrita" TextColor="Yellow"
                    HorizontalTextAlignment="Center" Margin="0,0,0,80"

@@ -11,8 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\hide_password.png" />
     <None Remove="Images\image_restricted_area.png" />
     <None Remove="Images\Image_user.png" />
+    <None Remove="Images\show_password.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +22,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\image_user.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\show_password.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\hide_password.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

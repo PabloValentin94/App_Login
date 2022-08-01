@@ -10,7 +10,7 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
           
             <Image x:Name="img_user" Aspect="AspectFill"
-                   HeightRequest="350"/>
+                   HeightRequest="350" BackgroundColor="Transparent"/>
 
             <Grid HorizontalOptions="Center">
 
