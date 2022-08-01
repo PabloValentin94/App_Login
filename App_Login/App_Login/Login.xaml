@@ -52,18 +52,18 @@
                             </Grid.RowDefinitions>
 
                             <Label Text="Senha:" HorizontalTextAlignment="Center"
-                               FontAttributes="Bold"
-                               FontSize="15"
-                               TextColor="Black"
-                               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+                                   FontAttributes="Bold"
+                                   FontSize="15"
+                                   TextColor="Black"
+                                   Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
 
                             <Entry x:Name="txt_senha_login"
-                               Placeholder="Insira sua senha"
-                               PlaceholderColor="Gray"
-                               HorizontalTextAlignment="Center"
-                               IsPassword="True"
-                               TextColor="Black"
-                               Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+                                   Placeholder="Insira sua senha"
+                                   PlaceholderColor="Gray"
+                                   HorizontalTextAlignment="Center"
+                                   IsPassword="True"
+                                   TextColor="Black"
+                                   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
 
                             <ImageButton x:Name="btn_mostrar_ocultar_senha" BackgroundColor="Transparent"
                                          Clicked="btn_mostrar_ocultar_senha_Clicked"
