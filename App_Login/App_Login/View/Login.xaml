@@ -6,10 +6,10 @@
 
     <ContentPage.Background>
 
-        <LinearGradientBrush StartPoint="0,00" EndPoint="1,00">
+        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
 
-            <GradientStop Color="#7289DA" Offset="0.000"/>
-            <GradientStop Color="#1E2124" Offset="1.000"/>
+            <GradientStop Color="#7289DA" Offset="0.3"/>
+            <GradientStop Color="#1E2124" Offset="1.1"/>
 
         </LinearGradientBrush>
         
@@ -27,7 +27,7 @@
                     <Label Text="LOGIN" HorizontalTextAlignment="Center"
                            FontAttributes="Bold"
                            FontSize="30"
-                           TextColor="Red"/>
+                           TextColor="#FF0000"/>
 
                     <StackLayout Margin="0,10,0,10">
 
@@ -85,7 +85,7 @@
                     </StackLayout>
 
                     <Button Text="Confirmar" BackgroundColor="#008000"
-                            TextColor="#FFF"
+                            TextColor="#FFFFFF"
                             FontAttributes="Bold"
                             Clicked="Button_Clicked"/>
 
