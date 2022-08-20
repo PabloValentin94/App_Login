@@ -1,19 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App_Login.Area_Restrita.Area_Restrita"
-             Title="Área Restrita"
-             BackgroundColor="Black">
+             x:Class="App_Login.View.Area_Restrita.Area_Restrita"
+             Title="Área Restrita">
+
+    <ContentPage.Background>
+
+        <LinearGradientBrush StartPoint="0,00" EndPoint="1,00">
+
+            <GradientStop Color="#004C4C" Offset="0.000"/>
+            <GradientStop Color="#66B2B2" Offset="1.000"/>
+
+        </LinearGradientBrush>
+
+    </ContentPage.Background>
 
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="15">
 
-            <Image x:Name="img_restricted_area" Aspect="AspectFill"
+            <Image x:Name="restricted_area" Aspect="AspectFill"
                    WidthRequest="300" HeightRequest="200"
                    MinimumWidthRequest="150" MinimumHeightRequest="100"
                    VerticalOptions="Center" HorizontalOptions="Center"
-                   Margin="0,0,0,5"/>
+                   Margin="0,0,0,5" BackgroundColor="Transparent"/>
 
             <Label Text="Área Restrita" TextColor="Yellow"
                    HorizontalTextAlignment="Center" Margin="0,0,0,80"

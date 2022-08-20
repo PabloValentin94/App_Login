@@ -11,15 +11,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\image_restricted_area.png" />
-    <None Remove="Images\Image_user.png" />
+    <None Remove="View\Imagens\hide_password.png" />
+    <None Remove="View\Imagens\restricted_area.png" />
+    <None Remove="View\Imagens\show_password.png" />
+    <None Remove="View\Imagens\user.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\image_restricted_area.png">
+    <EmbeddedResource Include="View\Imagens\hide_password.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Images\image_user.png">
+    <EmbeddedResource Include="View\Imagens\restricted_area.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Imagens\show_password.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Imagens\user.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -30,16 +38,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Area Restrita\Area_Restrita.xaml">
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\Area_Restrita\Area_Restrita.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Cadastro.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Login.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Opcoes.xaml">
+    <EmbeddedResource Update="View\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

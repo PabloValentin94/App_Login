@@ -7,22 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using App_Login;
-
-namespace App_Login
+namespace App_Login.View.Area_Restrita
 {
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    public partial class Cadastro : ContentPage
+    public partial class Area_Restrita : ContentPage
     {
-
-        public Cadastro()
+        public Area_Restrita()
         {
-
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
+
+            restricted_area.Source = ImageSource.FromResource("App_Login.View.Imagens." +
+            "restricted_area.png");
 
         }
 
@@ -32,20 +29,13 @@ namespace App_Login
             try
             {
 
-                if (String.IsNullOrEmpty(txt_usuario_cadastro.Text)
-                    || String.IsNullOrEmpty(txt_senha_cadastro.Text))
+                if (await DisplayAlert("Aviso!", "Realmente deseja sair da Área Restrita?",
+                                       "Sim", "Não"))
                 {
 
-                    await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
+                    App.Current.Properties.Remove("PersistenciaUsuarioLogado");
 
-                }
-
-                else
-                {
-
-                    await DisplayAlert("Concluído!", "Usuário cadastrado com sucesso.", "OK");
-
-                    await Navigation.PushAsync(new Login(txt_usuario_cadastro.Text, txt_senha_cadastro.Text));
+                    App.Current.MainPage = new NavigationPage(new Login());
 
                 }
 
@@ -59,7 +49,5 @@ namespace App_Login
             }
 
         }
-
     }
-
 }
