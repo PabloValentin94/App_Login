@@ -21,7 +21,7 @@ namespace App_Login.Droid
 
             Window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#04537C"));
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#000000"));
 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

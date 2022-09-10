@@ -15,10 +15,14 @@ namespace App_Login.View
     public partial class Login : ContentPage
     {
 
+        App PropriedadesApp;
+
         public Login()
         {
 
             InitializeComponent();
+
+            PropriedadesApp = (App)Application.Current;
 
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -33,10 +37,35 @@ namespace App_Login.View
             try
             {
 
+                string usuario = txt_usuario_login.Text;
+
+                string senha = txt_senha_login.Text;
+
                 if (String.IsNullOrEmpty(txt_usuario_login.Text) || String.IsNullOrEmpty(txt_senha_login.Text))
                 {
 
                     await DisplayAlert("Atenção!", "Preencha todos os campos antes de prosseguir.", "OK");
+
+                }
+
+                else
+                {
+
+                    if(PropriedadesApp.lista_usuarios.Any(i => (i.usuario.Equals(usuario) && i.senha.Equals(senha))))
+                    {
+
+                        App.Current.Properties.Add("PersistenciaUsuarioLogado", usuario);
+
+                        App.Current.MainPage = new View.Area_Restrita.Area_Restrita(usuario);
+
+                    }
+
+                    else
+                    {
+
+                        throw new Exception("Dados incorretos! Tente novamente.");
+
+                    }
 
                 }
 
@@ -45,7 +74,7 @@ namespace App_Login.View
             catch (Exception ex)
             {
 
-                await DisplayAlert("Erro!", ex.Message, "OK");
+                await DisplayAlert("Aviso!", ex.Message, "OK");
 
             }
 
@@ -82,7 +111,7 @@ namespace App_Login.View
             catch (Exception ex)
             {
 
-                await DisplayAlert("Erro!", ex.Message, "OK");
+                await DisplayAlert("Aviso!", ex.Message, "OK");
 
             }
 

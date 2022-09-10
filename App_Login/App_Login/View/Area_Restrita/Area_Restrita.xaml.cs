@@ -12,7 +12,10 @@ namespace App_Login.View.Area_Restrita
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Area_Restrita : ContentPage
     {
-        public Area_Restrita()
+
+        string nome;
+
+        public Area_Restrita(string nome_usuario)
         {
             InitializeComponent();
 
@@ -20,6 +23,17 @@ namespace App_Login.View.Area_Restrita
 
             restricted_area.Source = ImageSource.FromResource("App_Login.View.Imagens." +
             "restricted_area.png");
+
+            this.nome = nome_usuario;
+
+            mensagem_boas_vindas();
+
+        }
+
+        private async void mensagem_boas_vindas()
+        {
+
+            await DisplayAlert("Mensagem", "Seja bem-vindo " + this.nome, "OK");
 
         }
 
